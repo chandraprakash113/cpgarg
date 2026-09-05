@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>He & She Unisex Salon | Paota, Jodhpur</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #0b0b0b;
+            color: white;
+        }
+
+        header {
+            background: #101010;
+            padding: 22px 20px;
+            text-align: center;
+            border-bottom: 2px solid #d4af37;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            color: #d4af37;
+            font-size: 2.5rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .salon-subtitle {
+            color: #ddd;
+            margin: 5px 0 18px;
+            letter-spacing: 2px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 12px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #d4af37;
+        }
+
+        .hero {
+            min-height: 78vh;
+
+            background:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.65),
+                    rgba(0, 0, 0, 0.82)
+                ),
+                url("w2.jpeg")
+                center/cover no-repeat;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+            padding: 30px;
+        }
+
+        .hero h2 {
+            font-size: 4rem;
+            margin-bottom: 18px;
+        }
+
+        .gold {
+            color: #d4af37;
+        }
+
+        .hero p {
+            max-width: 700px;
+            color: #ddd;
+            font-size: 1.2rem;
+            line-height: 1.7;
+        }
+
+        .hero-btn {
+            margin-top: 28px;
+            padding: 13px 30px;
+            background: #d4af37;
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 30px;
+            transition: 0.3s;
+        }
+
+        .hero-btn:hover {
+            background: white;
+            transform: translateY(-3px);
+        }
+
+        .section {
+            max-width: 1200px;
+            margin: auto;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .section-title {
+            color: #d4af37;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .section-description {
+            color: #999;
+            margin-bottom: 45px;
+            font-size: 1rem;
+        }
+
+        .services-table {
+            width: 100%;
+            max-width: 850px;
+            margin: auto;
+            border-collapse: collapse;
+            background: #151515;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .services-table tr {
+            border-bottom: 1px solid #333;
+            transition: 0.3s;
+        }
+
+        .services-table tr:hover {
+            background: #202020;
+        }
+
+        .services-table td {
+            padding: 18px;
+            font-size: 1.1rem;
+        }
+
+        .services-table td:last-child {
+            text-align: right;
+            color: #d4af37;
+            font-weight: bold;
+        }
+
+        #hair-color {
+            background: linear-gradient(
+                180deg,
+                #0b0b0b,
+                #111
+            );
+        }
+
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(240px, 1fr)
+            );
+
+            gap: 25px;
+        }
+
+        .color-card {
+            background: #171717;
+            border: 1px solid #333;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: 0.4s;
+        }
+
+        .color-card:hover {
+            transform: translateY(-8px);
+            border-color: #d4af37;
+
+            box-shadow:
+                0 12px 30px
+                rgba(212, 175, 55, 0.22);
+        }
+
+        .color-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .color-content {
+            padding: 20px;
+        }
+
+        .color-content h4 {
+            color: #d4af37;
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+        }
+
+        .color-content p {
+            color: #aaa;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(250px, 1fr));
+
+            gap: 20px;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            height: 370px;
+            object-fit: contain;
+            border-radius: 12px;
+            border: 2px solid #333;
+            background: #111;
+            transition: 0.4s;
+        }
+
+        .gallery-grid img:hover {
+            transform: scale(1.03);
+            border-color: #d4af37;
+        }
+
+        .video-frame {
+            max-width: 960px;
+            margin: 0 auto;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 2px solid #d4af37;
+            background: #000;
+            box-shadow: 0 16px 40px rgba(212, 175, 55, 0.18);
+        }
+
+        .video-frame video {
+            display: block;
+            width: 100%;
+            height: auto;
+            max-height: 70vh;
+            object-fit: contain;
+            background: #000;
+        }
+
+        .about-box {
+            max-width: 850px;
+            margin: auto;
+
+            background: #151515;
+            padding: 35px;
+
+            border-radius: 15px;
+            border: 1px solid #333;
+        }
+
+        .about-box p {
+            color: #bbb;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .contact-box {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(250px, 1fr));
+
+            gap: 20px;
+        }
+
+        .contact-card {
+            background: #151515;
+            padding: 30px 20px;
+
+            border-radius: 15px;
+            border: 1px solid #333;
+
+            transition: 0.3s;
+        }
+
+        .contact-card:hover {
+            border-color: #d4af37;
+            transform: translateY(-5px);
+        }
+
+        .contact-card .icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .contact-card h4 {
+            color: #d4af37;
+            margin-bottom: 10px;
+        }
+
+        .contact-card p {
+            color: #aaa;
+            line-height: 1.6;
+        }
+
+        footer {
+            background: #050505;
+            text-align: center;
+            padding: 30px 20px;
+
+            border-top: 1px solid #333;
+        }
+
+        footer p {
+            color: #888;
+            margin: 8px;
+            line-height: 1.6;
+        }
+
+        footer strong {
+            color: #d4af37;
+        }
+
+        @media (max-width: 768px) {
+
+            .logo {
+                font-size: 2rem;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 5px 7px;
+                font-size: 0.9rem;
+            }
+
+            .hero {
+                min-height: 70vh;
+            }
+
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section {
+                padding: 60px 15px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <div class="logo">
+            ✂️ He & She
+        </div>
+        
+
+        <div class="salon-subtitle">
+            UNISEX SALON
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#hair-color">Hair Color</a>
+            <a href="#video">Video</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section id="home" class="hero">
+
+        <h2>
+            He
+            <span class="gold">& She</span>,
+            unisex
+            <span class="gold">salon</span>
+        </h2>
+
+        <p>
+            Premium haircut, beard styling, hair coloring
+            and professional salon services for men and women.
+        </p>
+
+        <a href="#contact" class="hero-btn">
+            Contact Us
+        </a>
+
+    </section>
+
+
+    <!-- ================= SERVICES ================= -->
+
+    <section id="services" class="section">
+
+        <h3 class="section-title">
+            Our Services & Pricing
+        </h3>
+
+        <p class="section-description">
+            Professional salon services at affordable prices.
+        </p>
+
+        <table class="services-table">
+
+            <tr>
+                <td>
+                    Classic Haircut
+                    (बाल कटाई)
+                </td>
+
+                <td>
+                    ₹150
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Beard Styling
+                    (दाढ़ी सेट करना)
+                </td>
+
+                <td>
+                    ₹100
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Hair Color / Dye
+                </td>
+
+                <td>
+                    ₹250+
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Premium Facial & Massage
+                </td>
+
+                <td>
+                    ₹400+
+                </td>
+            </tr>
+
+        </table>
+
+    </section>
+
+
+    <!-- ================= HAIR COLOR ================= -->
+
+    <section id="hair-color" class="section">
+
+        <h3 class="section-title">
+            ✨ Professional Hair Color
+        </h3>
+
+        <p class="section-description">
+            We provide professional hair coloring
+            with multiple brands.
+        </p>
+
+
+        <div class="color-grid">
+
+
+            <!-- MATRIX -->
+
+            <div class="color-card">
+
+                <img
+                   
+    src="matrix.png.png"
+    alt="Matrix Hair Color">
+                <div class="color-content">
+
+                    <h4>
+                        Matrix
+                    </h4>
+
+                    <p>
+                        Professional Hair Color
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- LOREAL -->
+
+            <div class="color-card">
+
+                <img
+                   
+    src="q2.jpg.jpg"
+    alt="L'Oreal Majirel Hair Color">
+                <div class="color-content">
+
+                    <h4>
+                        L'Oreal Majirel
+                    </h4>
+
+                    <p>
+                        Premium Hair Color
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- STREAX -->
+
+            <div class="color-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=85&w=700"
+                    alt="Streax Hair Color">
+
+                <div class="color-content">
+
+                    <h4>
+                        Streax
+                    </h4>
+
+                    <p>
+                        Stylish Hair Color
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- RAAGA -->
+
+            <div class="color-card">
+
+                <img
+                    src="images (1).jpg"
+                    alt="Raaga Hair Color">
+
+                <div class="color-content">
+
+                    <h4>
+                        Raaga
+                    </h4>
+
+                    <p>
+                        Beautiful Hair Color
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- KLACI -->
+
+            <div class="color-card">
+
+                <img
+                    src="q4.png"
+                    alt="Klaci Hair Color">
+
+                <div class="color-content">
+
+                    <h4>
+                        Klaci
+                    </h4>
+
+                    <p>
+                        Professional Hair Color
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- VELVEIREE -->
+
+            <div class="color-card">
+
+                <img
+                    src="q5.png"
+                    alt="VELVEIREE Hair Color">
+
+                <div class="color-content">
+
+                    <h4>
+                        VELVEIREE
+                    </h4>
+
+                    <p>
+                        Premium Hair Color
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ENEGA -->
+
+            <div class="color-card">
+
+                <img
+                    src="q6.png"
+                    alt="Enega Hair Color">
+
+                <div class="color-content">
+
+                    <h4>
+                        Enega
+                    </h4>
+
+                    <p>
+                        Smooth Hair Color
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- GRASS HERBS -->
+
+            <div class="color-card">
+
+                <img
+                    src="q7.png"
+                    alt="Grass Herbs Hair Color">
+
+                <div class="color-content">
+
+                    <h4>
+                        Grass Herbs
+                    </h4>
+
+                    <p>
+                        Herbal Hair Color
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= VIDEO ================= -->
+
+    <section id="video" class="section">
+
+        <h3 class="section-title">
+            Watch Our Salon
+        </h3>
+
+        <p class="section-description">
+            See the look and feel of He & She Unisex Salon.
+        </p>
+
+        <div class="video-frame">
+            <video controls preload="metadata" poster="w2.jpeg">
+                <source src="salon-video.mp4" type="video/mp4">
+                Your browser does not support this video.
+            </video>
+        </div>
+
+    </section>
+
+
+    <!-- ================= GALLERY ================= -->
+
+    <section id="gallery" class="section">
+
+        <h3 class="section-title">
+            Our Work & Salon Gallery
+        </h3>
+
+        <p class="section-description">
+            A glimpse of our professional salon experience.
+        </p>
+
+
+        <div class="gallery-grid">
+
+            <img
+                src="pic1.jpeg"
+                alt="Professional Haircut">
+
+            <img
+                src="pic2.jpeg"
+                alt="Barber Shop">
+
+            <img
+                src="pic3.jpeg"
+                alt="Beard Styling">
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ABOUT ================= -->
+
+    <section id="about" class="section">
+
+        <h3 class="section-title">
+            About He & She
+        </h3>
+
+        <div class="about-box">
+
+            <p>
+                Welcome to
+                <strong class="gold">
+                    He & She Unisex Salon
+                </strong>.
+                We provide professional grooming,
+                haircut, beard styling, hair coloring
+                and salon services for men and women.
+
+                <br><br>
+
+                Our goal is to give every customer
+                a stylish look, comfortable experience
+                and professional service.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CONTACT ================= -->
+
+    <section id="contact" class="section">
+
+        <h3 class="section-title">
+            Contact Us
+        </h3>
+
+        <p class="section-description">
+            Visit our salon or call us for more information.
+        </p>
+
+
+        <div class="contact-box">
+
+
+            <div class="contact-card">
+
+                <div class="icon">
+                    📍
+                </div>
+
+                <h4>
+                    Our Address
+                </h4>
+
+                <p>
+                    Shop Number 1,
+                    Dharamnarayan Hatha,
+                    Near Jain Book Depot &
+                    Pawar Juice,
+                    Paota B Road,
+                    Paota - 342006
+                </p>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <div class="icon">
+                    📞
+                </div>
+
+                <h4>
+                    Call Us
+                </h4>
+
+                <p>
+                    +91 8503975928
+                </p>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <div class="icon">
+                    ✂️
+                </div>
+
+                <h4>
+                    Salon
+                </h4>
+
+                <p>
+                    He & She
+                    <br>
+                    Unisex Salon
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            📍
+            Shop Number 1, Dharamnarayan Hatha,
+            Near Jain Book Depot & Pawar Juice,
+            Paota B Road, Paota - 342006
+        </p>
+
+        <p>
+            📞
+            +91 8503975928
+        </p>
+
+        <p>
+            &copy; 2026
+            <strong>
+                He & She Unisex Salon
+            </strong>.
+            All Rights Reserved.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
